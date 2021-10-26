@@ -1,0 +1,26 @@
+<head>
+  <title>autoform-test</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  Form:
+  {{#autoForm collection=links id="insertLinkForm" type="insert" template="bootstrap4"}}
+    {{> afQuickField name='title'}}
+    <button type="submit">insert</button>
+  {{/autoForm}}
+  <ul>
+    {{#each link in linksCollection}}
+    <li>
+      {{link.title}}
+    </li>
+  {{/each}}
+  </ul>
+  
+</template>
+
+
